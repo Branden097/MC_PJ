@@ -33,7 +33,6 @@ def un_gz_rt_gs(file_name):
         if 'was slain by' in log:
             time = (log[1:9],)
             fight = re.findall(r"(\w*) was slain by (\w*)", log)[0]
-            # Add new ROW
             result += [time + fight]
 
     df = pd.DataFrame(result, columns = ['time', 'loser', 'winner'])
